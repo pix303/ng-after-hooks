@@ -1,0 +1,38 @@
+<div class="pt-5">
+  <app-content-child>
+    <!-- ComponentChild matched by Directive type-->
+    <date-viewer [currentDate]="inputDate"></date-viewer>
+    <!-- ComponentChild matched by selector -->
+    <header>First child</header>
+    <!-- ComponentChild matched by class -->
+    <div class="image-container">
+      <img
+        #imageRef
+        class="w-36 h-36"
+        src="https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/a2/65/ee/a265eef2-12d1-9c1a-759a-074c6a3acc75/0801061347437.jpg/486x486bb.png"
+      />
+    </div>
+    <!-- ComponentChild matched by class -->
+    <div class="caption-container">
+      <p>projected content from parent #1</p>
+    </div>
+    <span>content not projected due to unmatch ng-content</span>
+  </app-content-child>
+
+  <app-content-child>
+    <date-viewer [currentDate]="inputDate"></date-viewer>
+
+    <div class="caption-container">
+      <p><b>projected content from parent #2</b></p>
+    </div>
+    <div class="image-container">
+      <img
+        #imageRef
+        class="w-36 h-36"
+        src="https://th.bing.com/th/id/R.034755a60d207ca7ea61d4b5f6678264?rik=7P%2blNqb37lD0ww&pid=ImgRaw&r=0"
+      />
+    </div>
+    <!--no matter parent projection content order-->
+    <header>Second child</header>
+  </app-content-child>
+</div>

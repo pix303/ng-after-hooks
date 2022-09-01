@@ -1,0 +1,13 @@
+<div class="p-3 rounded border-zinc-500 border-2 m-1">
+  <h2 class="text-zinc-500 font-bold text-2xl">
+    <!-- selector tag type -->
+    <ng-content select="header"></ng-content>
+  </h2>
+  <div class="text-xl">
+    <!-- selector class type -->
+    <ng-content select=".caption-container"></ng-content>
+    <ng-content select=".image-container"></ng-content>
+  </div>
+  <!-- data recover -->
+  <p class="text-md">Date: {{ this.dateViewer.currentDate }}</p>
+</div>
